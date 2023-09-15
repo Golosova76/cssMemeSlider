@@ -95,6 +95,7 @@ body {
 .description {
   width: 70%;
   text-align: left;
+  height: 100%;
 }
 
 .text {
@@ -118,11 +119,16 @@ body {
   border-radius: 50%;
   border: 0.2rem solid rgb(63, 41, 150);
   cursor: pointer;
-  transition: all 0.7s ease 0s;
+  transition: all 0.5s ease 0s;
 }
 .control:hover {
   background-color: #fff;
   border: 0.2rem solid #fff;
+}
+
+.control:active {
+  background-color: rgba(143, 26, 34, 0.487);
+  border: 0.2rem solid rgba(143, 26, 34, 0.101);
 }
 
 #slide1:checked ~ .slides .slide {
@@ -163,13 +169,6 @@ body {
   border: 0.2rem solid #fff;
 }
 
-#slide1:checked ~ .description-controls .controls .control:nth-child(1):active,
-#slide2:checked ~ .description-controls .controls .control:nth-child(2):active,
-#slide3:checked ~ .description-controls .controls .control:nth-child(3):active,
-#slide4:checked ~ .description-controls .controls .control:nth-child(4):active {
-  border: 0.2rem solid #544e4e;
-}
-
 @media (max-width: 60rem) {
   .main__wrapper {
     margin: 0 auto;
@@ -184,7 +183,11 @@ body {
 
   .description-controls .description {
     width: 100%;
-    align-items: flex-start;
+  }
+
+  .description-controls .controls {
+    justify-content: center;
+    width: 100%;
   }
 
   .control {
